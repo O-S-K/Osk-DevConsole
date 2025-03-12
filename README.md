@@ -1,81 +1,66 @@
+OSK DevConsole
 
-# UIFeel 🎨✨
+OSK DevConsole is a debugging tool for Unity that allows you to easily create a debug interface with buttons and labels to display and modify game parameters, even after the game is built.
 
-**UIFeel** is a lightweight Unity package designed to enhance your UI animations and effects. With support for DoTween and various utilities, this package makes creating engaging UI experiences faster and simpler.
+🚀 Features
 
----
+ConsoleCommand: Create ex: [ConsoleCommand("cs_quit")], [ConsoleCommand("cs_info_system")] ....
+LabelConsole: Display and modify variable values in the panel.
+Command Line: Enter commands like "cs_set_time_scale 60" to change runtime parameters ...
+Auto-Generated UI: Console dynamically creates UI elements from references, supporting generics for flexibility.
+Category-Based Interface: Organize debug elements into categories for easier management.
+Supports Mobile & PC: Open the console with the Tab key or a UI button.
 
-## 🌟 Key Features
+📦 Installation
 
-- **Dotween Animation Previews**  
-  Preview animations such as position, rotation, scale, and color tweening directly in the Unity Editor without entering Play mode.  
-  > _Note: For advanced features, consider purchasing **Dotween Pro**._
+1. Add Package from GitHub
+Open Unity Package Manager (Window → Package Manager) and select Add package from git URL:
+https://github.com/O-S-K/Osk-DevConsole.git
 
-- **Customizable Components**  
-  Easily extend and combine components to create complex behaviors tailored to your needs.
 
-- **Built-in UI Effects**  
-  A variety of utilities to bring life to your UI:
-  - **Button Effects**: Add animations to button interactions.
-  - **Image & Text Effects**: Dynamic animations for UI visuals.
-  - **VFX Utilities**: Subtle but impactful visual feedback.
+🛠️ Usage
 
-- **Ease of Use**  
-  Designed with simplicity in mind, allowing you to integrate quickly and efficiently.
+1. Activating the DevConsole
 
----
+Press the ~ key to open the Console.
+Or click button devtool
 
-## 🛠️ Installation
+2. Registering 
 
-1. Clone or download this repository.
-2. Import the package into your Unity project.
-3. Import thirdparty (DOTween and Odin).
+[ConsoleCommand("cs_set_fps")]
+public void SetFPS(int fps)
+{
+    Application.targetFrameRate = fps;
+    Debug.Log("FPS set to: " + fps);
+}
+[ConsoleCommand("cs_set_time_scale")]
+public void SetTimeScale(float timeScale)
+{
+    Time.timeScale = timeScale;
+}
+[ConsoleCommand("cs_quit")]
+public void SetQuit()
+{
+    Application.Quit(); 
+}
+ 
 
----
+3. Manually Entering Commands
 
-## 🚀 How to Use
+Type into the console:
+cs_set_fps 60, cs_set_time_scale = 2, cs_quit .... 
 
-1. **Attach Components**  
-   Attach any animation component (e.g., `DotweenProvider`) to your GameObject.
+📝 Notes
 
-2. **Configure and Preview**  
-   Customize animations directly in the Inspector. Use the preview options for instant feedback.
+Supports Unity 2020.3 and later.
+Does not affect the final build if not activated.
 
-3. **Combine for Complex Effects**  
-   Mix and match effects like button animations, text gradients, and VFX utilities to achieve your desired feel.
+📜 License
+MIT License - Free to use and contribute!
 
----
+❤️ Contributions
+If you want to contribute or report issues, create an issue or pull request on GitHub.
 
-## 📦 Supported Animations
-
-- **Position Tweening**: Smoothly move UI elements.
-- **Rotation Tweening**: Add spins or rotations to components.
-- **Scale Tweening**: Animate size changes.
-- **Graphics Tweening**: Add color transitions for text or images.
-.... more
-  
----
-
-## 🎯 Example Libraries Included
-
-- **Button Effects**
-- **Image Effects**
-- **Text Effects**
-- **VFX Utilities**  
-  Examples include:
-  - Breathing effects
-  - Glow effects
-  - Noise visual effects
-
----
-
-## 💬 Support
-
-If you have any questions, suggestions, or issues, feel free to create an **Issue** in this repository or reach out to the development team.
-
-Link Yoputube: https://www.youtube.com/watch?v=8x0ld-eqtBs.
-
-Link FB: https://www.facebook.com/xOskx/.
-
-Thank you for using **UIFeel**! 🎉
-
+📧 Contact  
+Email: gamecoding1999@gmail.com
+Facebook: OSK Framework
