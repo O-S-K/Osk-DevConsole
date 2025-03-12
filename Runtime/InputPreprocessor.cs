@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OSK
+namespace OSKDevTool
 {
     /// <summary>
     /// Allows injecting delegates to modify the console input before it's send for execution to the <see cref="CommandDatabase"/>.

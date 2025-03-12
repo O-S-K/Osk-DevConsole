@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace OSK
+namespace OSKDevTool
 {
     public class LogCapture : MonoBehaviour
     {
@@ -41,7 +40,15 @@ namespace OSK
             logMessages.Add(logEntry);
         }
         
-        [Button, ConsoleCommand("cs_loggs_enable")]
+        
+        [ContextMenu("Enable Logs")]
+        public void EnableLog()
+        {
+            isLogEnabled = true;
+            Application.logMessageReceived += HandleLog;
+        }
+        
+        [ConsoleCommand("cs_loggs_enable")]
         public void EnableLog(bool enable)
         {
             isLogEnabled = enable;
@@ -49,8 +56,8 @@ namespace OSK
             else Application.logMessageReceived -= HandleLog;
         }
         
-
-        [Button, ConsoleCommand("cs_export_loggs_txt")]
+        [ConsoleCommand("cs_export_loggs_txt")]
+        [ContextMenu("Export Logs")]
         public void ExportLogToFile()
         {
             logFilePath = System.IO.Path.Combine(Application.persistentDataPath, "LogCapture.txt");
@@ -63,7 +70,8 @@ namespace OSK
             Debug.Log($"Logs exported to: {logFilePath}");
         }
 
-        [Button, ConsoleCommand("cs_clear_loggs_txt")]
+        [ConsoleCommand("cs_clear_loggs_txt")]
+        [ContextMenu("Clear Logs")]
         public void ClearLogs()
         {
             logMessages.Clear();
@@ -76,7 +84,7 @@ namespace OSK
             File.Delete(logFilePath);
         }
 
-        [Button, ConsoleCommand("cs_open_loggs_txt")]
+        [ConsoleCommand("cs_open_loggs_txt")]
         public void OpenLogFile()
         {
             logFilePath = System.IO.Path.Combine(Application.persistentDataPath, "LogCapture.txt");

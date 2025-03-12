@@ -1,6 +1,6 @@
 using System;
 
-namespace OSK
+namespace OSKDevTool
 {
     /// <summary>
     /// Registers a public static method with supported argument types as a console command.

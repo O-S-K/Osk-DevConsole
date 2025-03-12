@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Profiling;
 
-namespace OSK
+namespace OSKDevTool
 {
     public class FPSCounter : MonoBehaviour
     {

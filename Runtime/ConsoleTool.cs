@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace OSK
+namespace OSKDevTool
 {
     public class ConsoleTool : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace OSK
+namespace OSKDevTool
 {
     public class DeviceInfo : MonoBehaviour
     {

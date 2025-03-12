@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OSK
+namespace OSKDevTool
 {
     public class DebugLogWindow : MonoBehaviour
     {

@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace OSK
+namespace OSKDevTool
 {
     public class ConsoleGUI : MonoBehaviour
     {
@@ -72,7 +72,8 @@ namespace OSK
             float x = Mathf.Max(Screen.width / 1920f, 1);
             float y = Mathf.Max(Screen.height / 1080f, 1);
 
-            instance = hostObject.GetOrAdd<ConsoleGUI>();
+            instance = hostObject.GetComponent<ConsoleGUI>();
+            if (!instance) instance = hostObject.AddComponent<ConsoleGUI>();
             Scale = ScaleByResolution ? new Vector2(x, y) : Vector2.one;
 
             Size = new Vector2(Screen.width - 375 * Scale.x, 40 * Scale.y);
@@ -90,7 +91,8 @@ namespace OSK
                 font = Font
             };
 
-            guiProxy = hostObject.GetOrAdd<OnGUIProxy>();
+            guiProxy = hostObject.GetComponent<OnGUIProxy>();
+            if (!guiProxy) guiProxy = hostObject.AddComponent<OnGUIProxy>();
             guiProxy.OnGUIDelegate = instance.DrawGUI;
             guiProxy.enabled = false;
         }
